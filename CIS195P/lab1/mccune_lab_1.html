@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title> Stats and Modifiers</title>
+    <script>
+    /*
+     need to build an array in order to improve this code, so that we can get rid of duplicate code
+     Should also be validating input. Can not allow negative ability scores.
+    */
+
+
+    /*
+    To calculate modifiers.....
+        If the number is 10 or 11, the modifier is ZERO.
+        If the number (x) is greater than 11
+          (x-10)/2  Rounded down
+          The returned number is displayed after a "+"
+        If the number (x) is less than 10
+          ()(x-10)*(-1))/2     Rounded up
+          The returned number is displayed after a "-"
+    */
+        function calculate() {
+          //Strength
+            var str = Number(document.getElementById("str").value);
+                if(str>11){
+                  var strMod = " + " + Math.floor((str-10)/2)
+                } else if (str<10) {
+                  var strMod = " - " + Math.ceil(((str-10)*(-1))/2)
+                } else {
+                  var strMod = 0
+                }
+            document.getElementById("strModifier").innerHTML = strMod;
+          //Dexterity
+          var dex = Number(document.getElementById("dex").value);
+              if(dex>11){
+                var dexMod = " + " + Math.floor((dex-10)/2)
+              } else if (dex<10) {
+                var dexMod = " - " + Math.ceil(((str-10)*(-1))/2)
+              } else {
+                var dexMod = 0
+              }
+          document.getElementById("dexModifier").innerHTML = dexMod;
+          //Constitution
+          var con = Number(document.getElementById("con").value);
+              if(con>11){
+                var conMod = " + " + Math.floor((con-10)/2)
+              } else if (con<10) {
+                var conMod = " - " + Math.ceil(((con-10)*(-1))/2)
+              } else {
+                var conMod = 0
+              }
+          document.getElementById("conModifier").innerHTML = conMod;
+          //Wisdom
+          var wis = Number(document.getElementById("wis").value);
+              if(wis>11){
+                var wisMod = " + " + Math.floor((wis-10)/2)
+              } else if (wis<10) {
+                var wisMod = " - " + Math.ceil(((wis-10)*(-1))/2)
+              } else {
+                var wisMod = 0
+              }
+          document.getElementById("wisModifier").innerHTML = wisMod;
+          //Intelligence
+          var int = Number(document.getElementById("int").value);
+              if(int>11){
+                var intMod = " + " + Math.floor((int-10)/2)
+              } else if (int<10) {
+                var intMod = " - " + Math.ceil(((int-10)*(-1))/2)
+              } else {
+                var intMod = 0
+              }
+          document.getElementById("intModifier").innerHTML = intMod;
+
+        }
+
+    </script>
+  </head>
+  <body>
+      <table style="border:solid black 1px">
+        <tr>
+          <th>Ability</th><th>Score</th><th>Modifier</th>
+        </tr>
+        <tr>
+            <th>Strength:</th>
+            <td><input type=text id="str"></input></td>
+            <td><span id="strModifier"></span></td>
+        </tr>
+        <tr>
+            <th>Dexterity:</th>
+            <td><input type=text id="dex"></input></td>
+            <td><span id="dexModifier"></span></td>
+        </tr>
+        <tr>
+            <th>Constitution:</th>
+            <td><input type=text id="con"></input></td>
+            <td><span id="conModifier"></span></td>
+        </tr>
+        <tr>
+            <th>Wisdom</th>
+            <td><input type=text id="wis"></input></td>
+            <td><span id="wisModifier"></span></td>
+        </tr>
+        <tr>
+            <th>Intelligence:</th>
+            <td><input type=text id="int"></input></td>
+            <td><span id="intModifier"></span></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td style="text-align:center;"><input type="button" value="Calculate Modifiers" onclick="calculate();"
+          ></input></td>
+        </tr>
+      </table>
+  </body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Ohm's Law calculator</title>
+    <script>
+        function calculate() {
+            var volts = Number(document.getElementById("volts").value);
+            var amps = Number(document.getElementById("amps").value);
+            var ohms = volts/amps;
+            document.getElementById("results").innerHTML = ohms.toFixed(2) + "&Omega;" ;
+        }
+    </script>
+  </head>
+  <body>
+      <table style="border:solid black 1px">
+        <tr>
+            <th>Volts:</th>
+            <td><input type=text id="volts"></input></td>
+        </tr>
+        <tr>
+            <th>Amps:</th>
+            <td><input type=text id="amps"></input></td>
+        </tr>
+        <tr>
+            <th>Ohms:</th>
+            <td><span id="results"></span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td style="text-align:center;"><input type="button" value="Calculate" onclick="calculate();"
+          ></input></td>
+        </tr>
+      </table>
+  </body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE "html">
+<html>
+    <head>
+        <title>A Simple Drawing Program</title>
+        <script src="View.js"></script>
+        <script src="Scene.js"></script>
+        <script src="Shape.js"></script>
+        <script src="RectangleShape.js"></script>
+        <script src="CircleShape.js"></script>
+        <script src="TriangleShape.js"></script>
+        <script src="SquareShape.js"></script>
+        <script src="Shape.ShapeType.js"></script>
+        <script>
+            var view = new View();
+            var picture = [
+                    {
+                        type: Shape.ShapeType.RECTANGLE,
+                        color: "Green",
+                        x: 0.2,
+                        y: 0.2,
+                        width: 0.3,
+                        height: 0.2,
+                        outline: "Red"
+                    },
+                    {
+                        type: Shape.ShapeType.TRIANGLE,
+                        color: "Yellow",
+                        x: 0.8,
+                        y: 0.2,
+                        width: 0.25,
+                        height: 0.25,
+                        outline: "Blue"
+                    },
+                    {
+                        type: Shape.ShapeType.SQUARE,
+                        color: "Yellow",
+                        x: 0.2,
+                        y: 0.8,
+                        size: 0.25,
+                        outline: "Blue"
+                    },
+                    {
+                        type: Shape.ShapeType.CIRCLE,
+                        color: "Blue",
+                        x: 0.8,
+                        y: 0.8,
+                        radius: 0.125,
+                        outline: "Red"
+
+                    }
+                ];
+
+            view.createScene(picture);
+            window.addEventListener("resize", function(){view.resize(); }, false);
+
+        </script>
+      </head>
+    <body style="margin:0; overflow:hidden;" onload ="view.resize();">
+      <canvas id ="canvas" width="600" height="400"></canvas>
+    </body>
+</html>
